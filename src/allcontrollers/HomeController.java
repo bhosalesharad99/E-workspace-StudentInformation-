@@ -1,4 +1,4 @@
-package controller;
+package allcontrollers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/studentRegistration")
-public class HelloWorldController{
+@RequestMapping("/Home")
+public class HomeController{
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView helloWorld(){
 
-		ModelAndView model = new ModelAndView("studentRegistration");
-		model.addObject("msg", "hello world");
+		ModelAndView model = new ModelAndView("Home");
+		//model.addObject("msg", "hello world");
 
 		return model;
 	}
