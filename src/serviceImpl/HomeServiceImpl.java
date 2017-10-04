@@ -20,10 +20,10 @@ public class HomeServiceImpl implements HomeService{
 		try
 	    {
 	      // create a mysql database connection
-	      String myDriver = "org.gjt.mm.mysql.Driver";
+	      String myDriver = "com.mysql.jdbc.Driver";
 	      String myUrl = "jdbc:mysql://localhost/student";
 	      Class.forName(myDriver);
-	      Connection conn = DriverManager.getConnection(myUrl, "root", "");
+	      Connection conn = DriverManager.getConnection(myUrl, "root", "root");
 
 	      // the mysql insert statement
 	      String query = " insert into studentInformation (studentid, studentname, address, mobileno)"
@@ -33,6 +33,8 @@ public class HomeServiceImpl implements HomeService{
 	      PreparedStatement preparedStmt = conn.prepareStatement(query);
 	      preparedStmt.setInt(1, 2);
 	      preparedStmt.setString (2, firstName);
+	      preparedStmt.setString (3, firstName);
+	      preparedStmt.setString (4, firstName);
 
 	      // execute the preparedstatement
 	      preparedStmt.execute();
@@ -41,6 +43,7 @@ public class HomeServiceImpl implements HomeService{
 	    }
 	    catch (Exception e)
 	    {
+	    	e.printStackTrace();
 	      System.err.println("Got an exception!");
 	      System.err.println(e.getMessage());
 	    }

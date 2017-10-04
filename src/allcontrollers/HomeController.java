@@ -12,8 +12,8 @@ import service.HomeService;
 
 @Controller
 public class HomeController{
-	@Autowired(required=false)
-	HomeService homeService;
+	@Autowired
+	private HomeService homeService;
 	
 	@RequestMapping("/Home")  
     public ModelAndView showform(){  
@@ -21,8 +21,8 @@ public class HomeController{
         return new ModelAndView("Home","command",new RegistrationInformation());  
     }  
 	
-	  @RequestMapping(value="/save",method = RequestMethod.POST)  
-	    public ModelAndView save( @RequestParam String FirstName){  
+	  @RequestMapping(value="/savexyz",method = RequestMethod.POST)  
+	    public ModelAndView save( @RequestParam String FirstName,@RequestParam String LastName){  
 	        //write code to save emp object  
 	        //here, we are displaying emp object to prove emp has data  
 	        System.out.println(FirstName);
@@ -31,5 +31,7 @@ public class HomeController{
 	          
 	        //return new ModelAndView("empform","command",emp);//will display object data  
 	        return new ModelAndView("redirect:/viewemp");//will redirect to viewemp request mapping  
-	    } 
+	    }
+	  
+	  
 }
