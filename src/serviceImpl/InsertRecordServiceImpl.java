@@ -6,17 +6,13 @@ import java.sql.PreparedStatement;
 
 import org.springframework.stereotype.Service;
 
-import service.HomeService;
+import service.InsertRecordService;
 
 @Service
-public class HomeServiceImpl implements HomeService{
-
-	public HomeServiceImpl() {
-		// TODO Auto-generated constructor stub
-	}
+public class InsertRecordServiceImpl implements InsertRecordService{
 
 	@Override
-	public void save(String firstName) {
+	public void save(String StudentName,String Address,String MobileNo) {
 		try
 	    {
 	      // create a mysql database connection
@@ -26,15 +22,15 @@ public class HomeServiceImpl implements HomeService{
 	      Connection conn = DriverManager.getConnection(myUrl, "root", "root");
 
 	      // the mysql insert statement
-	      String query = " insert into studentInformation (studentid, studentname, address, mobileno)"
-	        + " values (?, ?, ?, ?)";
+	      String query = " insert into studentInformation (studentname, address, mobileno)"
+	        + " values (?, ?, ?)";
 
 	      // create the mysql insert preparedstatement
 	      PreparedStatement preparedStmt = conn.prepareStatement(query);
-	      preparedStmt.setInt(1, 2);
-	      preparedStmt.setString (2, firstName);
-	      preparedStmt.setString (3, firstName);
-	      preparedStmt.setString (4, firstName);
+	      //preparedStmt.setInt(1, 2);
+	      preparedStmt.setString (1, StudentName);
+	      preparedStmt.setString (2, Address);
+	      preparedStmt.setString (3, MobileNo);
 
 	      // execute the preparedstatement
 	      preparedStmt.execute();

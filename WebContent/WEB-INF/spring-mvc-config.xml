@@ -8,13 +8,21 @@
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		
 		<property name="prefix">
 			<value>/WEB-INF/view/</value>
 		</property>
+		
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
+		
 	</bean>
-	<bean id="homeService" class="serviceImpl.HomeServiceImpl" />
+	
+	<bean id="InsertRecordService" class="serviceImpl.InsertRecordServiceImpl" />        <!-- number of autowired in controller is equals to bean id like this -->
+	<bean id="UpdateRecordService" class="serviceImpl.UpdateRecordServiceImpl" />
+	<bean id="DeleteRecordService" class="serviceImpl.DeleteRecordServiceImpl" />
+	
 	<context:component-scan base-package="allcontrollers" />
+	
 </beans>

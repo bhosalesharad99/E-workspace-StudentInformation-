@@ -1,6 +1,6 @@
 package entity;
 
-public class StudentInformation {
+public class StudentInfoEntity {
 	
 	Integer StudentId;
 	String StudentName;
