@@ -27,7 +27,16 @@ public class DeleteRecordServiceImpl implements DeleteRecordService {
 	      String query = "delete from studentinformation where studentid="+Studentid+"";
 
 	      // create the mysql insert preparedstatement
+	      /*Connection conn=null;
+	      conn=jdbcobj.Connection();
+	      PreparedStatement preparedStmt = conn.prepareStatement(query);*/
+	      
+	      
+	    
 	      PreparedStatement preparedStmt = jdbcobj.Connection().prepareStatement(query);
+	      
+	      
+	      
 	      //preparedStmt.setInt(1, 2);
 	    /* preparedStmt.setInt(1, StudentId);
 	      preparedStmt.setString (2, StudentName);*/

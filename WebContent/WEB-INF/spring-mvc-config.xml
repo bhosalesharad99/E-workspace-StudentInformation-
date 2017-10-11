@@ -22,6 +22,7 @@
 	<bean id="InsertRecordService" class="serviceImpl.InsertRecordServiceImpl" />        <!-- number of autowired in controller is equals to bean id like this -->
 	<bean id="UpdateRecordService" class="serviceImpl.UpdateRecordServiceImpl" />
 	<bean id="DeleteRecordService" class="serviceImpl.DeleteRecordServiceImpl" />
+	<bean id="GetInformation" class="serviceImpl.GetInformationServiceImpl" />
 	
 	<context:component-scan base-package="allcontrollers" />
 	
